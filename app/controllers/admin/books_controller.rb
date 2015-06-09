@@ -1,6 +1,7 @@
 class Admin::BooksController < ApplicationController
     layout 'admin'
     before_action :find_book, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_administrator
 
     def index
       @books = Book.all
