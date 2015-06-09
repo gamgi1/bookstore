@@ -6,6 +6,14 @@ class Admin::BooksController < ApplicationController
       @books = Book.all
     end
 
+    def price
+      @books = Book.all
+    end
+
+    def title
+      @books = Book.all
+    end
+
     def new
       @book = Book.new
     end
@@ -39,6 +47,7 @@ class Admin::BooksController < ApplicationController
     end
 
     private
+
     def find_book
       @book = Book.find(params[:id])
     end
@@ -46,4 +55,5 @@ class Admin::BooksController < ApplicationController
     def book_params
       params.require(:book).permit(:title, :author, :pages, :price)
     end
+
 end

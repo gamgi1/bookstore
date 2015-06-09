@@ -6,7 +6,7 @@
 <%= link_to("Alphebetize Books", admin_bookstitle_path) %>
 <br>
 <br>
-<% @books.each do |book| %>
+<% @books.order(title: :asc).each do |book| %>
     Title: <%= book.title %>
     <br>
     Author: <%= book.author %>
