@@ -1,0 +1,14 @@
+<h1> Manage Bookstore </h1>
+<%= link_to("Add Book", new_admin_book_path) %>
+<% @books.each do |book| %>
+  Title: <%= book.title %>
+  <br>
+  Author: <%= book.author %>
+  <br>
+  Page Count: <%= book.pages %>
+  <br>
+  Price: $<%= book.price %>
+  <br>
+  <%= link_to("Edit", edit_admin_book_path(book.id)) %>
+  <%= link_to("Delete", admin_book_path(book.id), method: :delete) %>
+<% end %>

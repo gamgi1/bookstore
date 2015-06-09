@@ -1,0 +1,19 @@
+<h1> Edit Book </h1>
+
+<%=  form_for(@book, url: admin_book_path)  do |f| %>
+  <%= f.label('Title') %>
+  <%= f.text_field (:title) %>
+  <br>
+  <%= f.label('Author') %>
+  <%= f.text_field (:author) %>
+  <br>
+  <%= f.label('Page Count') %>
+  <%= f.text_field (:pages) %>
+  <br>
+  <%= f.label('Price') %>
+  <%= f.text_field (:price) %>
+  <br>
+  <%= f.submit('Add Book') %>
+  <br>
+  <br>
+<% end %>
