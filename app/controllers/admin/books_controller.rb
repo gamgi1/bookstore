@@ -7,14 +7,6 @@ class Admin::BooksController < ApplicationController
       @books = Book.all
     end
 
-    def price
-      @books = Book.all
-    end
-
-    def title
-      @books = Book.all
-    end
-
     def new
       @book = Book.new
     end
