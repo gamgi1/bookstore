@@ -7,6 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if administrator_signed_in? %>
+     <%= link_to 'Books', admin_books_path %>
+     <%= link_to 'Logout', admin_logout_path, method: :delete %>
+   <% else %>
+     <%= link_to 'Login', admin_login_path%>
+     <%= link_to 'Sign up!', admin_add_path %>
+   <% end %>
+
+   <p>
+     <%= alert %>
+   </p>
+   <p>
+     <%= notice %>
+   </p>
 
 <%= yield %>
 
