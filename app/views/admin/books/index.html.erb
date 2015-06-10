@@ -8,7 +8,7 @@ Sort By: <%= link_to 'Title', admin_books_path({order_by: 'title'})  %>,
 <br>
 <br>
 <table class="table">
-  <thead>  
+  <thead>
     <tr>
       <th>Title</th>
       <th>Author</th>
@@ -19,7 +19,7 @@ Sort By: <%= link_to 'Title', admin_books_path({order_by: 'title'})  %>,
     </tr>
   </thead>
   <% @books.each do |book| %>
-  <tr>
+  <tr class="<%= danger_none_left(book.in_stock) %>">
     <td><%= book.title %></td>
     <td><%= book.author %></td>
     <td><%= book.pages %></td>
