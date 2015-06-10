@@ -1,22 +1,26 @@
-<h1> Edit Book </h1>
-
+<h1> Manage Bookstore </h1>
+<h2> Edit Book </h2>
 <%=  form_for(@book, url: admin_book_path)  do |f| %>
-  <%= f.label('Title') %>
-  <%= f.text_field (:title) %>
-  <br>
-  <%= f.label('Author') %>
-  <%= f.text_field (:author) %>
-  <br>
-  <%= f.label('Page Count') %>
-  <%= f.text_field (:pages) %>
-  <br>
-  <%= f.label('Price') %>
-  <%= f.text_field (:price) %>
-  <br>
-  <%= f.label('In Stock') %>
-  <%= f.text_field (:in_stock) %>
-  <br>
-  <%= f.submit('Update') %>
-  <br>
-  <br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Page Count</th>
+      <th>Price</th>
+      <th>In Stock</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tr>
+    <td><%= f.text_field (:title) %></td>
+    <td><%= f.text_field (:author) %></td>
+    <td><%= f.text_field (:pages) %></td>
+    <td><%= f.text_field (:price) %></td>
+    <td><%= f.text_field (:in_stock) %></td>
+    <td>
+    <%= f.submit('Update') %>
+    </td>
+  </tr>
+</table>
 <% end %>

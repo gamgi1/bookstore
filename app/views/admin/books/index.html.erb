@@ -8,14 +8,16 @@ Sort By: <%= link_to 'Title', admin_books_path({order_by: 'title'})  %>,
 <br>
 <br>
 <table class="table">
-  <tr>
-    <th>Title</th>
-    <th>Author</th>
-    <th>Price</th>
-    <th>Page Count</th>
-    <th>In Stock</th>
-    <th>&nbsp;</th>
-  </tr>
+  <thead>  
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Page Count</th>
+      <th>Price</th>
+      <th>In Stock</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
   <% @books.each do |book| %>
   <tr>
     <td><%= book.title %></td>
