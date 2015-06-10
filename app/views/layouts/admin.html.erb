@@ -7,20 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if administrator_signed_in? %>
-     <%= link_to 'Logout', admin_logout_path, method: :delete %>
-   <% else %>
-     <%= link_to 'Login', admin_login_path%>
-   <% end %>
-
-   <p>
-     <%= alert %>
-   </p>
-   <p>
-     <%= notice %>
-   </p>
-
-<%= yield %>
-
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <% if administrator_signed_in? %>
+          <%= link_to 'Logout', admin_logout_path, method: :delete %>
+        <% else %>
+          <%= link_to 'Login', admin_login_path%>
+        <% end %>
+       <p><%= alert %></p>
+       <p><%= notice %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
