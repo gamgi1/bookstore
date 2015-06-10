@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150609204609) do
+ActiveRecord::Schema.define(version: 20150610202401) do
 
   create_table "administrators", force: :cascade do |t|
     t.string   "username"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150609204609) do
     t.float    "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "in_stock"
   end
 
 end
