@@ -16,6 +16,8 @@ Sort By: <%= link_to 'Title', admin_books_path({order_by: 'title'})  %>,
     <br>
     Price: $<%= book.price %>
     <br>
+    In stock: <%= book.in_stock %>
+    <br>
     <%= link_to("Edit", edit_admin_book_path(book.id)) %>
     <%= link_to("Delete", admin_book_path(book.id), method: :delete) %>
     <br>
