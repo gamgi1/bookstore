@@ -2,8 +2,9 @@
 <%= link_to("Add Book", new_admin_book_path) %>
 <br>
 <br>
-<%= link_to("Orber Books By Price", admin_booksprice_path)%>
-<%= link_to("Alphebetize Books", admin_bookstitle_path) %>
+Sort By: <%= link_to 'Title', admin_books_path({order_by: 'title'})  %>,
+          <%= link_to 'Price', admin_books_path({order_by: 'price'}) %>,
+          <%= link_to 'Author', admin_books_path({order_by: 'author'}) %>
 <br>
 <br>
 <% @books.each do |book| %>

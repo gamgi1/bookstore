@@ -4,7 +4,11 @@ class Admin::BooksController < ApplicationController
     before_action :authenticate_administrator
 
     def index
-      @books = Book.all
+      if params[:order_by]
+        @books = Book.all.order(params[:order_by].to_sym)
+      else
+        @books = Book.all
+      end
     end
 
     def new
