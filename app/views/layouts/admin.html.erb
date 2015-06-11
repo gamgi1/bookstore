@@ -15,8 +15,9 @@
         <% else %>
           <%= link_to 'Login', admin_login_path%>
         <% end %>
-       <p><%= alert %></p>
-       <p><%= notice %></p>
+        <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
       </div>
     </div>
     <div class="row">

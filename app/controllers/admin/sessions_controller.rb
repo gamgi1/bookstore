@@ -8,10 +8,10 @@ class Admin::SessionsController < ApplicationController
     @administrator = Administrator.where(username: params[:username]).first
     if @administrator.present? && @administrator.authenticate(params[:password])
       session[:administrator_id] = @administrator.id
-      flash[:notice] = "Welcome Administrator"
+      flash[:success] = "Administrator successfully signed in!"
       redirect_to admin_books_path
     else
-      flash[:alert] = "You aint no administrator friend"
+      flash[:danger] = "You aint no administrator friend..."
       render :new
     end
   end
